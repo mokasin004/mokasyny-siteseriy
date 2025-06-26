@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мокасини 004 — Сірі</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+            color: #333;
+        }
+        header {
+            background: #2c2c2c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        input, select, button {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Мокасини 004 — Сірі</h1>
+        <p>Ціна: 1750 грн | 🚚 Доставка по Україні</p>
+    </header>
+    <div class="container">
+        <p><strong>Стильні чоловічі мокасини</strong> виготовлені з натуральної шкіри.<br>
+        Зносостійка підошва, шкіряна підкладка та устілка роблять взуття максимально комфортним.<br>
+        Підходять як на кожен день, так і на вихід.</p>
+
+        <p><strong>📏 Розмірна сітка:</strong><br>
+        40 — 26 см,<br>
+        41 — 27 см,<br>
+        42 — 28 см,<br>
+        43 — 28,5 см,<br>
+        44 — 29 см,<br>
+        45 — 30 см,<br>
+        46 — 30,5 см</p>
+
+        <img src="https://i.imgur.com/JN9YYn3.jpg" alt="Мокасини Фото 1" />
+        <img src="https://i.imgur.com/6iR6bQI.jpg" alt="Мокасини Фото 2" />
+
+        <form id="orderForm">
+            <input type="text" name="name" placeholder="Прізвище, імʼя" required />
+            <input type="tel" name="phone" placeholder="Телефон" required />
+            <input type="text" name="city" placeholder="Місто" required />
+            <input type="text" name="np" placeholder="Номер відділення Нової Пошти" required />
+
+            <label for="size" style="font-weight:bold;">Оберіть розмір:</label>
+            <select name="size" id="size" required>
+              <option value="" disabled selected>Оберіть розмір</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+            </select>
+
+            <button type="submit">Замовити</button>
+        </form>
+        <p id="status"></p>
+    </div>
+
+    <script src="secure-submit.js"></script>
+</body>
+</html>
