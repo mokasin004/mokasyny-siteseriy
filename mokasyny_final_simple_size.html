@@ -156,7 +156,7 @@
 🏤 Відділення НП: №${data.get('novaPoshta')}
 👟 Розмір: ${data.get('size')}`;
 
-      fetch("https://api.telegram.org/bot7611404050:AAFjy5OXY2_DAz3H4uoJwnSXLC9d8tT9Y74/sendMessage", {
+      fetch("https://api.telegram.org/sendMessage", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
