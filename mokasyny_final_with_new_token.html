@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мокасини — Модель 004</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(90deg, #3f3f3f, #1f1f1f);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .content h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .form-container {
+      background-color: #f3f3f3;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #222;
+      color: white;
+      font-size: 18px;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #444;
+    }
+    .contact {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Чоловічі шкіряні мокасини — Модель 004</h1>
+  </header>
+
+  <div class="gallery">
+    <img src="17D7F0E0-8278-4D3D-959E-1C2BBAEE14D8.jpeg" alt="Фото 1">
+    <img src="BB628648-50B0-4A26-8FDA-6CB2C1F81C8A.jpeg" alt="Фото 2">
+    <img src="E30959A6-7CBC-4F2B-B318-BBAC740DD507.jpeg" alt="Фото 3">
+    <img src="EC1FDE1A-9B07-4047-B956-01838EAD28E1.jpeg" alt="Фото 4">
+  </div>
+
+  <div class="content">
+    <h2>Сірий колір | Натуральна шкіра</h2>
+    <p>Стильні чоловічі мокасини виготовлені з натуральної шкіри. Зносостійка підошва, шкіряна внутрішня підкладка, шкіряна устілка – все це робить взуття максимально комфортним.</p>
+    <p>Мінімалістичний дизайн дозволяє носити їх як щодня, так і на вихід. Повномірні. Розміри: 40–46.</p>
+    <p><strong>Ціна: 1750 грн</strong><br>🚚 Доставка по Україні</p>
+
+    
+    
+    <p><strong>📏 Розмірна сітка:</strong><br>
+    40 — 26 см,<br>
+    41 — 27 см,<br>
+    42 — 28 см,<br>
+    43 — 28,5 см,<br>
+    44 — 29 см,<br>
+    45 — 30 см,<br>
+    46 — 30,5 см</p>
+<div class="form-container">
+      <form id="orderForm">
+        <input type="text" name="name" placeholder="Прізвище та імʼя" required />
+        <input type="tel" name="phone" placeholder="Телефон" required />
+        <input type="text" name="city" placeholder="Місто" required />
+        <input type="text" name="novaPoshta" placeholder="№ відділення Нової Пошти" required />
+        
+    <label for="size" style="font-weight:bold;">Оберіть розмір:</label>
+    <select name="size" id="size" required style="padding: 12px; font-size: 16px; border-radius: 6px;">
+      <option value="" disabled selected>Оберіть розмір</option>
+      <option value="40">40</option>
+      <option value="41">41</option>
+      <option value="42">42</option>
+      <option value="43">43</option>
+      <option value="44">44</option>
+      <option value="45">45</option>
+      <option value="46">46</option>
+    </select>
+    
+        <button type="submit">Замовити</button>
+      </form>
+      <div class="contact">
+        Або телефонуйте: <strong>098 413 79 80</strong>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const message = `
+Заявка на мокасини:
+👤 Прізвище та імʼя: ${data.get('name')}
+📞 Телефон: ${data.get('phone')}
+🏙 Місто: ${data.get('city')}
+🏤 Відділення НП: №${data.get('novaPoshta')}
+👟 Розмір: ${data.get('size')}`;
+
+      fetch("https://api.telegram.org/bot7611404050:AAE6rSRhzhO2zsGZTrsVdwsbuL7HCc7xToM/sendMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          chat_id: "688606915",
+          text: message
+        })
+      }).then(r => {
+        if (r.ok) {
+          alert("Заявка надіслана!");
+          form.reset();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
