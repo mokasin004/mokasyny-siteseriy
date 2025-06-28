@@ -8,6 +8,7 @@ document.getElementById('orderForm').addEventListener('submit', function (e) {
 📞 Телефон: ${data.get('phone')}
 🏙 Місто: ${data.get('city')}
 🏤 НП: №${data.get('np')}
+🎨 Колір: ${data.get('color')}
 👟 Розмір: ${data.get('size')}
   `;
 
