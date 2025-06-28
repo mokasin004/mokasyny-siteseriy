@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -51,28 +50,34 @@
         button:hover {
             background-color: #555;
         }
+
+        /* 🔴 СТИЛІ ДЛЯ ЦІНИ */
+        .price-highlight {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d32f2f;
+            margin: 20px 0 10px;
+            padding: 10px 15px;
+            background-color: #fff3f3;
+            border: 2px solid #d32f2f;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .price-highlight span {
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Мокасини 004 — </h1>
-        .price-highlight {
-    font-size: 22px;
-    font-weight: bold;
-    color: #d32f2f; /* червоний */
-    margin: 20px 0 10px;
-    padding: 10px 15px;
-    background-color: #fff3f3;
-    border: 2px solid #d32f2f;
-    border-radius: 8px;
-    display: inline-block;
-}
-.price-highlight span {
-    font-size: 24px;
-}
+        <h1>Мокасини 004 — Сірі</h1>
         <p>Ціна: 1750 грн | 🚚 Доставка по Україні</p>
     </header>
+
     <div class="container">
+        <!-- Виділена ціна -->
+        <div class="price-highlight">Ціна: <span>1750 грн</span></div>
+
         <p><strong>Стильні чоловічі мокасини</strong> виготовлені з натуральної шкіри.<br>
         Зносостійка підошва, шкіряна підкладка та устілка роблять взуття максимально комфортним.<br>
         Підходять як на кожен день, так і на вихід.</p>
@@ -85,11 +90,9 @@
         44 — 29 см,<br>
         45 — 30 см,<br>
         46 — 30,5 см</p>
-<div class="price-highlight">Ціна: <span>1750 грн</span></div>
+
         <img src="seryi-.jpg" alt="Мокасини Фото 1" />
         <img src="seryi-1.jpg" alt="Мокасини Фото 2" />
-        
-
 
         <form id="orderForm">
             <input type="text" name="name" placeholder="Прізвище, імʼя" required />
@@ -97,15 +100,15 @@
             <input type="text" name="city" placeholder="Місто" required />
             <input type="text" name="np" placeholder="Номер відділення Нової Пошти" required />
 
-<!-- Вибір кольору -->
-<label for="color">Оберіть колір:</label>
-<select name="color" id="color" required>
-  <option value="" disabled selected>Оберіть колір</option>
-  <option value="Сірий">Сірий</option>
-  <option value="Чорний">Чорний</option>
-  <option value="Капучино">Капучино</option>
-  <option value="Синій">Синій</option>
-</select>
+            <label for="color">Оберіть колір:</label>
+            <select name="color" id="color" required>
+              <option value="" disabled selected>Оберіть колір</option>
+              <option value="Сірий">Сірий</option>
+              <option value="Чорний">Чорний</option>
+              <option value="Капучино">Капучино</option>
+              <option value="Синій">Синій</option>
+            </select>
+
             <label for="size" style="font-weight:bold;">Оберіть розмір:</label>
             <select name="size" id="size" required>
               <option value="" disabled selected>Оберіть розмір</option>
